@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# Weatheria
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Estructura de carpetas
 
-Currently, two official plugins are available:
+* `components/`: Componentes de UI. No contienen lógica de negocio compleja.
+* `hooks/`: Hooks personalizados que encapsulan lógica reutilizable.
+* `layout/`: Layouts de la aplicación.
+* `pages/`: Páginas de la aplicación.
+* `services/`: Funciones responsables de consumir APIs externas.
+* `types/`: Tipos e interfaces de TypeScript compartidos en la aplicación.
+* `utils/`: Funciones auxiliares puras (formateo, mapeos, helpers).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cada carpeta tiene una única responsabilidad claramente definida.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Convenciones de Código
 
-## Expanding the ESLint configuration
+### 1. Naming de archivos y carpetas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Carpetas: **kebab-case** (ej. `layout`, `weather-card`)
+* Componentes React: **PascalCase**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  * Ejemplo: `SearchBar.tsx`, `ForecastCard.tsx`
+* Hooks: prefijo `use` en **camelCase**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  * Ejemplo: `useWeather.ts`, `useGeocoding.ts`
+* Servicios: **camelCase** y sufijo `Service`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  * Ejemplo: `weatherService.ts`
+* Tipos: **camelCase** para archivos, **PascalCase** para exports
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  * Ejemplo: `weather.ts` → `Weather`, `WeatherResponse`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 2. Naming de variables y funciones
+
+* Variables y funciones: **camelCase**
+
+  * Ejemplo: `isLoading`, `fetchWeather`
+* Booleanos deben leerse como preguntas
+
+  * Ejemplo: `isLoading`, `hasError`
+* Funciones asíncronas deben describir claramente la acción
+
+  * Ejemplo: `getWeatherByCity`, `fetchForecast`
+
+---
+
+### 3. Commits
+
+* Convención basada en Conventional Commits
+
+Ejemplos:
+
+* `chore: initialize project`
+* `feat: add city search component`
+* `fix: handle city not found error`
+
+---
+
