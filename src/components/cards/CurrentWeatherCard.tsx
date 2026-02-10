@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wind } from 'lucide-react';
-import type { CurrentWeather } from '../types/weather';
+import type { CurrentWeather } from '../../types/weather';
 
 interface CurrentWeatherCardProps {
     weather: CurrentWeather;
