@@ -29,20 +29,22 @@ export const SearchCity: React.FC<SearchCityProps> = ({ onSearch, isLoading }) =
 
     return (
         <div className="w-full max-w-2xl mx-auto mb-10 px-4">
-            <form onSubmit={handleSubmit} className="relative flex flex-row gap-3 items-start">
-                <Input
-                    value={query}
-                    onChange={handleChange}
-                    placeholder="Introduce el nombre de una ciudad..."
-                    error={error}
-                    disabled={isLoading}
-                    autoComplete="off"
-                />
+            <form onSubmit={handleSubmit} className="relative flex flex-col sm:flex-row gap-3 items-start">
+                <div className="w-full">
+                    <Input
+                        value={query}
+                        onChange={handleChange}
+                        placeholder="Introduce el nombre de una ciudad..."
+                        error={error}
+                        disabled={isLoading}
+                        autoComplete="off"
+                    />
+                </div>
                 <Button
                     type="submit"
                     isLoading={isLoading}
                     leftIcon={!isLoading && <Search className="w-5 h-5" />}
-                    className="whitespace-nowrap min-w-[140px]"
+                    className="whitespace-nowrap w-full sm:w-auto sm:min-w-[140px]"
                 >
                     {isLoading ? 'Buscando' : 'Buscar'}
                 </Button>

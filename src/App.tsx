@@ -43,7 +43,7 @@ function App() {
                   <h3 className="text-xl font-bold text-white">Próximos 7 días</h3>
                   <div className="h-[2px] flex-1 bg-gradient-to-r from-white/10 to-transparent rounded-full" />
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
                   {forecast.daily.map((day) => (
                     <ForecastCard key={day.date} forecast={day} />
                   ))}
