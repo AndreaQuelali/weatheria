@@ -3,6 +3,7 @@
 ## Descripción
 
 Weatheria es una aplicación web que permite consultar el pronóstico del tiempo para diferentes ciudades del mundo. 
+<img width="1335" height="629" alt="image" src="https://github.com/user-attachments/assets/a0c5612f-0d2b-40a0-bb3d-27e682ef9df4" />
 
 ---
 
