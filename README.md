@@ -67,7 +67,7 @@ npm run preview
 * `services/`: Funciones responsables de consumir APIs externas.
 * `test/`: Tests.
 * `types/`: Tipos e interfaces de TypeScript compartidos en la aplicación.
-* `utils/`: Funciones auxiliares puras (formateo, mapeos, helpers).
+* `utils/`: Funciones auxiliares puras.
 
 Cada carpeta tiene una única responsabilidad claramente definida.
 
@@ -77,31 +77,33 @@ Cada carpeta tiene una única responsabilidad claramente definida.
 
 ### 1. Naming de archivos y carpetas
 
-* Carpetas: **kebab-case** (ej. `layout`, `weather-card`)
+* Carpetas: **kebab-case**
+
+  * Ejemplo: `layout`
 * Componentes React: **PascalCase**
 
-  * Ejemplo: `SearchBar.tsx`, `ForecastCard.tsx`
+  * Ejemplo: `ForecastCard.tsx`
 * Hooks: prefijo `use` en **camelCase**
 
-  * Ejemplo: `useWeather.ts`, `useGeocoding.ts`
+  * Ejemplo: `useWeather.ts`
 * Servicios: **camelCase** y sufijo `Service`
 
   * Ejemplo: `weatherService.ts`
 * Tipos: **camelCase** para archivos, **PascalCase** para exports
 
-  * Ejemplo: `weather.ts` → `Weather`, `WeatherResponse`
+  * Ejemplo: `city.ts` → `City`
 
 ### 2. Naming de variables y funciones
 
 * Variables y funciones: **camelCase**
 
-  * Ejemplo: `isLoading`, `fetchWeather`
+  * Ejemplo: `isLoading`, `handleChange`
 * Booleanos deben leerse como preguntas
 
-  * Ejemplo: `isLoading`, `hasError`
+  * Ejemplo: `isLoading`
 * Funciones asíncronas deben describir claramente la acción
 
-  * Ejemplo: `getWeatherByCity`, `fetchForecast`
+  * Ejemplo: `getCityCoordinates`, `getWeatherData`
 
 ### 3. Commits
 
@@ -160,8 +162,6 @@ Para ejecutar los tests:
 npm run test
 ```
 
-El testing se enfoca en la lógica crítica de negocio, especialmente en el manejo de estados asincrónicos y control de errores.
-
 ---
 
 ## Decisiones técnicas
@@ -173,9 +173,9 @@ La lógica de negocio fue separada en:
 * services → comunicación con APIs externas
 * hooks → manejo de estado y orquestación
 * types → definición de contratos de datos
-* components/ui → componentes reutilizables
+* components → componentes reutilizables
 
-Esta separación mejora la escalabilidad y facilita testing.
+Esta separación mejora la escalabilidad
 
 El uso de un hook personalizado (useWeather) permite desacoplar la lógica de obtención de datos de la capa visual.
 
