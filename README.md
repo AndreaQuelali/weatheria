@@ -1,5 +1,24 @@
 # Weatheria
 
+## Descripción
+
+Weatheria es una aplicación web que permite consultar el pronóstico del tiempo para diferentes ciudades del mundo. 
+
+## Tecnologías
+
+* React
+* TypeScript
+* Tailwind CSS
+* Vite
+* Vitest
+
+## Comandos
+
+* `npm install`: Instala las dependencias.
+* `npm run dev`: Inicia el servidor de desarrollo.
+* `npm run build`: Compila el proyecto.
+* `npm run test`: Ejecuta los tests.
+
 ## Estructura de carpetas
 
 * `components/`: Componentes de UI. No contienen lógica de negocio compleja.

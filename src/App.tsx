@@ -29,12 +29,6 @@ function App() {
               <AlertCircle className="w-6 h-6 text-red-500" />
             </div>
             <p className="text-red-300 font-medium text-center">{error}</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="text-white bg-red-500/20 hover:bg-red-500/30 px-4 py-2 rounded-lg text-sm transition-colors"
-            >
-              Reintentar
-            </button>
           </div>
         )}
 
