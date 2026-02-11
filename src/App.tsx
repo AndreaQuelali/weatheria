@@ -60,7 +60,10 @@ function App() {
         )}
 
         {!currentWeather && !loading && !error && (
-          <p className="text-lg font-medium text-gray-500 flex items-center justify-center">Busca una ciudad para ver el pronóstico</p>
+          <div className="flex flex-col items-center justify-center">
+            <img src="/weatheria.png" alt="Weatheria" className="w-24 h-24 opacity-40" />
+            <p className="text-lg font-medium text-gray-500">Busca una ciudad para ver el pronóstico</p>
+          </div>
         )}
       </div>
     </AppLayout>
