@@ -31,6 +31,9 @@ describe('useWeather hook', () => {
                 temperature: 20,
                 description: 'Despejado',
                 windSpeed: 10,
+                windDirection: 180,
+                humidity: 50,
+                feelsLike: 19,
                 weatherCode: 0
             },
             forecast: {
