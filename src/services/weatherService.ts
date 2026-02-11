@@ -37,7 +37,7 @@ export const getCityCoordinates = async (cityName: string): Promise<City> => {
 export const getWeatherData = async (city: City): Promise<{ current: CurrentWeather; forecast: WeeklyForecast }> => {
     try {
         const response = await fetch(
-            `${WEATHER_API_URL}?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,wind_speed_10m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto`
+            `${WEATHER_API_URL}?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,wind_speed_10m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&forecast_days=7&timezone=auto`
         );
 
         if (!response.ok) {
